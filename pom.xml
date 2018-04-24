@@ -47,7 +47,7 @@
         <configuration>
             <archive>
                 <manifest>
-                    <mainClass>br.com.view.Principal</mainClass>
+                    <mainClass>com.view.Principal</mainClass>
                 </manifest>
             </archive>
             <descriptorRefs>
