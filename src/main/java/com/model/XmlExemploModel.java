@@ -17,7 +17,7 @@ public class XmlExemploModel {
         connectionModel.setDatabaseUser("saj");
         connectionModel.setDatabasePasswd("agesune1");
         connectionModel.setDatabasePG5TINT("PG5TINT");
-        connectionModel.setDatabaseINDTINT("INTTING");
+        connectionModel.setDatabaseINDTINT("INDTINT");
         connectionModel.setDataDeCorte("02/03/2018");
         new ObjectToXML().createXML(connectionModel,Properties.PATH_CONNECTION);
         if (new File(Properties.PATH_CONNECTION).exists()){

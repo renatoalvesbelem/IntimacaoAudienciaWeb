@@ -82,6 +82,7 @@ public class ListaIntimacoesPG {
             file.delete();
             try {
                 FileWriter arquivo = new FileWriter(new File(PATH_FILE));
+                arquivo.write("CDPROCESSO NUSEQPROCESSOMV NUDOCOAB"+"\n");
                 for (String intimacao : listaIntimacoes) {
                     System.out.println(intimacao);
                     arquivo.write(intimacao+"\n");
