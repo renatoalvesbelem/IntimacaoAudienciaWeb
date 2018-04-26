@@ -27,7 +27,7 @@ public class OracleConnectionControl {
         boolean isConnected = false;
 
         String portNumber = "1521";
-        String url = "jdbc:oracle:thin:@" + host + ":" + portNumber + ":" + servico;
+        String url = "jdbc:oracle:thin:@" + host + ":" + portNumber + "/" + servico;
         System.out.println(url);
 
         try {
@@ -56,7 +56,7 @@ public class OracleConnectionControl {
 
 
         String portNumber = "1521";
-        String url = "jdbc:oracle:thin:@" + host + ":" + portNumber + ":" + servico;
+        String url = "jdbc:oracle:thin:@" + host + ":" + portNumber + "/" + servico;
 
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
