@@ -46,7 +46,6 @@ public class ListaIntimacoesPG {
                 String NUSEQPROCESSOMV = resultSetPG.getString("NUSEQPROCESSOMV");
                 String NUDOCUMENTO = resultSetPG.getString("NUDOCUMENTO");
                 listaIntimacoesPG.add(CDPROCESSO + " " + NUSEQPROCESSOMV + " " + NUDOCUMENTO);
-
             }
             oraclePG.disconnect();
 
