@@ -23,8 +23,6 @@ public class ListaAudienciasPG {
     private ConnectionModel connectionModel;
 
     private static List<String> listaProcessos = new ArrayList();
-    private static List<String> listaProcessosNaoIndice = new ArrayList();
-
 
     public ListaAudienciasPG() {
         connectionModel = (ConnectionModel) new XMLToObject(new ConnectionModel(), PATH_CONNECTION).instanceObjectParsed();
@@ -93,8 +91,6 @@ public class ListaAudienciasPG {
             }
 
 
-
-
         }
 
         ArrayList<String> listaTemp = new ArrayList<String>();
@@ -102,17 +98,12 @@ public class ListaAudienciasPG {
             listaTemp.add(processo.split("_")[0]);
         }
 
-        for (String processo : listaProcessos) {
-            if (!listaTemp.contains(processo)) {
-                listaProcessosNaoIndice.add(processo);
-            }
-        }
         return listaDiferencaAudiencias;
     }
 
 
     public void geraLog() {
-        List<String> listaAudiencias = new ListaAudienciasPG().getListaAudiencias();
+       final List<String> listaAudiencias = new ListaAudienciasPG().getListaAudiencias();
         File file = new File(PATH_FILE);
         file.delete();
         try {
@@ -122,15 +113,12 @@ public class ListaAudienciasPG {
                 System.out.println(audiencia);
                 arquivo.write(audiencia + "\n");
             }
+            System.out.println("Filtrada");
             for (String processo : listaProcessos) {
                 System.out.println(processo);
                 arquivo.write(processo + "\n");
             }
-            System.out.println("Filtrada");
-            for (String processo : listaProcessosNaoIndice) {
-                System.out.println(processo);
-                arquivo.write(processo + "\n");
-            }
+
             arquivo.close();
             JOptionPane.showMessageDialog(null, "Log gerado");
 
